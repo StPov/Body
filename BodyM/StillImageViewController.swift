@@ -44,7 +44,7 @@ class StillImageViewController: UIViewController {
         if let visionModel = try? VNCoreMLModel(for: segmentationModel.model) {
             self.visionModel = visionModel
             request = VNCoreMLRequest(model: visionModel, completionHandler: visionRequestDidComplete)
-            request?.imageCropAndScaleOption = .centerCrop
+            request?.imageCropAndScaleOption = .scaleFill
         } else {
             fatalError()
         }

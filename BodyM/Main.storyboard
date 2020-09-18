@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OKs-u2-zxf">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OKs-u2-zxf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +10,7 @@
         <!--Live Image-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LiveImageViewController" customModule="SemanticSegmentation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LiveImageViewController" customModule="BodyM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +62,7 @@
                                     <constraint firstAttribute="width" secondItem="JAF-1N-GU4" secondAttribute="height" multiplier="3:4" priority="750" id="1PJ-If-ZK3"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZz-xg-qgT" customClass="DrawingSegmentationView" customModule="SemanticSegmentation_CoreML" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZz-xg-qgT" customClass="DrawingSegmentationView" customModule="BodyM" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="69" width="414" height="552"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -104,32 +101,30 @@
         <!--Still Image View Controller-->
         <scene sceneID="IS1-oH-MuW">
             <objects>
-                <viewController id="X7F-xP-m0H" customClass="StillImageViewController" customModule="SemanticSegmentation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="X7F-xP-m0H" customClass="StillImageViewController" customModule="BodyM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rrC-89-LGp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R9C-5j-ZDa">
-                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.40175513699999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="R9C-5j-ZDa" secondAttribute="height" multiplier="1:1" priority="750" id="hLb-44-q2j"/>
-                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcq-ZI-Sh1" customClass="DrawingSegmentationView" customModule="SemanticSegmentation_CoreML" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcq-ZI-Sh1" customClass="DrawingSegmentationView" customModule="BodyM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gcq-ZI-Sh1" firstAttribute="width" secondItem="R9C-5j-ZDa" secondAttribute="width" id="7HO-59-VjE"/>
-                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="centerY" secondItem="rrC-89-LGp" secondAttribute="centerY" id="Yzr-Xo-c4W"/>
-                            <constraint firstItem="gcq-ZI-Sh1" firstAttribute="height" secondItem="R9C-5j-ZDa" secondAttribute="height" id="ZnV-Z1-3JU"/>
-                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="leading" secondItem="pfR-pQ-aIK" secondAttribute="leading" id="isW-hl-eyC"/>
-                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="trailing" secondItem="pfR-pQ-aIK" secondAttribute="trailing" id="rzc-JX-bhm"/>
-                            <constraint firstItem="gcq-ZI-Sh1" firstAttribute="centerX" secondItem="R9C-5j-ZDa" secondAttribute="centerX" id="zYu-l7-wc3"/>
-                            <constraint firstItem="gcq-ZI-Sh1" firstAttribute="centerY" secondItem="R9C-5j-ZDa" secondAttribute="centerY" id="zkt-y0-Zxs"/>
+                            <constraint firstItem="pfR-pQ-aIK" firstAttribute="bottom" secondItem="gcq-ZI-Sh1" secondAttribute="bottom" id="KWp-bJ-iOD"/>
+                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="top" secondItem="pfR-pQ-aIK" secondAttribute="top" id="LFA-px-BCE"/>
+                            <constraint firstItem="gcq-ZI-Sh1" firstAttribute="leading" secondItem="pfR-pQ-aIK" secondAttribute="leading" id="Rmq-tS-zGQ"/>
+                            <constraint firstItem="pfR-pQ-aIK" firstAttribute="bottom" secondItem="R9C-5j-ZDa" secondAttribute="bottom" id="d2t-UT-ABM"/>
+                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="trailing" secondItem="pfR-pQ-aIK" secondAttribute="trailing" id="fFa-WS-qkZ"/>
+                            <constraint firstItem="gcq-ZI-Sh1" firstAttribute="trailing" secondItem="pfR-pQ-aIK" secondAttribute="trailing" id="lty-rC-XIp"/>
+                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="leading" secondItem="pfR-pQ-aIK" secondAttribute="leading" id="oC9-vF-9uc"/>
+                            <constraint firstItem="gcq-ZI-Sh1" firstAttribute="top" secondItem="pfR-pQ-aIK" secondAttribute="top" id="op0-xG-2Ob"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pfR-pQ-aIK"/>
                     </view>
@@ -155,6 +150,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="OKs-u2-zxf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k8X-uG-0Ob">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
