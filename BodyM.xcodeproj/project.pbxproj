@@ -7,23 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85A661642514E5CD009ADE43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661632514E5CD009ADE43 /* AppDelegate.swift */; };
-		85A661662514E5CD009ADE43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661652514E5CD009ADE43 /* SceneDelegate.swift */; };
-		85A661682514E5CD009ADE43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661672514E5CD009ADE43 /* ViewController.swift */; };
-		85A6616B2514E5CD009ADE43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A661692514E5CD009ADE43 /* Main.storyboard */; };
-		85A6616D2514E5CD009ADE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A6616C2514E5CD009ADE43 /* Assets.xcassets */; };
-		85A661702514E5CD009ADE43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A6616E2514E5CD009ADE43 /* LaunchScreen.storyboard */; };
+		85A661862514E5E8009ADE43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A661782514E5E7009ADE43 /* Main.storyboard */; };
+		85A661872514E5E8009ADE43 /* DrawingSegmentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661792514E5E7009ADE43 /* DrawingSegmentationView.swift */; };
+		85A661882514E5E8009ADE43 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6617A2514E5E7009ADE43 /* Measure.swift */; };
+		85A661892514E5E8009ADE43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A6617B2514E5E7009ADE43 /* LaunchScreen.storyboard */; };
+		85A6618A2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 85A6617D2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel */; };
+		85A6618B2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 85A6617E2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel */; };
+		85A6618C2514E5E8009ADE43 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 85A6617F2514E5E8009ADE43 /* DeepLabV3.mlmodel */; };
+		85A6618D2514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661802514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift */; };
+		85A6618E2514E5E8009ADE43 /* LiveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661812514E5E8009ADE43 /* LiveImageViewController.swift */; };
+		85A6618F2514E5E8009ADE43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661822514E5E8009ADE43 /* AppDelegate.swift */; };
+		85A661902514E5E8009ADE43 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661832514E5E8009ADE43 /* VideoCapture.swift */; };
+		85A661912514E5E8009ADE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A661842514E5E8009ADE43 /* Assets.xcassets */; };
+		85A661922514E5E8009ADE43 /* StillImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661852514E5E8009ADE43 /* StillImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		85A661602514E5CD009ADE43 /* BodyM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyM.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		85A661632514E5CD009ADE43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85A661652514E5CD009ADE43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		85A661672514E5CD009ADE43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		85A6616A2514E5CD009ADE43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		85A6616C2514E5CD009ADE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		85A6616F2514E5CD009ADE43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A661712514E5CD009ADE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85A661782514E5E7009ADE43 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		85A661792514E5E7009ADE43 /* DrawingSegmentationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingSegmentationView.swift; sourceTree = "<group>"; };
+		85A6617A2514E5E7009ADE43 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		85A6617B2514E5E7009ADE43 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85A6617D2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3Int8LUT.mlmodel; sourceTree = "<group>"; };
+		85A6617E2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
+		85A6617F2514E5E8009ADE43 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
+		85A661802514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentationResultMLMultiArray.swift; sourceTree = "<group>"; };
+		85A661812514E5E8009ADE43 /* LiveImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveImageViewController.swift; sourceTree = "<group>"; };
+		85A661822514E5E8009ADE43 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85A661832514E5E8009ADE43 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		85A661842514E5E8009ADE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85A661852514E5E8009ADE43 /* StillImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StillImageViewController.swift; sourceTree = "<group>"; };
+		85A661932514E6D9009ADE43 /* BodyM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BodyM-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +71,31 @@
 		85A661622514E5CD009ADE43 /* BodyM */ = {
 			isa = PBXGroup;
 			children = (
-				85A661632514E5CD009ADE43 /* AppDelegate.swift */,
-				85A661652514E5CD009ADE43 /* SceneDelegate.swift */,
-				85A661672514E5CD009ADE43 /* ViewController.swift */,
-				85A661692514E5CD009ADE43 /* Main.storyboard */,
-				85A6616C2514E5CD009ADE43 /* Assets.xcassets */,
-				85A6616E2514E5CD009ADE43 /* LaunchScreen.storyboard */,
+				85A661822514E5E8009ADE43 /* AppDelegate.swift */,
+				85A661842514E5E8009ADE43 /* Assets.xcassets */,
+				85A661792514E5E7009ADE43 /* DrawingSegmentationView.swift */,
+				85A6617B2514E5E7009ADE43 /* LaunchScreen.storyboard */,
+				85A661812514E5E8009ADE43 /* LiveImageViewController.swift */,
+				85A661782514E5E7009ADE43 /* Main.storyboard */,
+				85A6617A2514E5E7009ADE43 /* Measure.swift */,
+				85A6617C2514E5E8009ADE43 /* mlmodel */,
+				85A661802514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift */,
+				85A661852514E5E8009ADE43 /* StillImageViewController.swift */,
+				85A661832514E5E8009ADE43 /* VideoCapture.swift */,
 				85A661712514E5CD009ADE43 /* Info.plist */,
+				85A661932514E6D9009ADE43 /* BodyM-Bridging-Header.h */,
 			);
 			path = BodyM;
+			sourceTree = "<group>";
+		};
+		85A6617C2514E5E8009ADE43 /* mlmodel */ = {
+			isa = PBXGroup;
+			children = (
+				85A6617D2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel */,
+				85A6617E2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel */,
+				85A6617F2514E5E8009ADE43 /* DeepLabV3.mlmodel */,
+			);
+			path = mlmodel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +130,7 @@
 				TargetAttributes = {
 					85A6615F2514E5CD009ADE43 = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
 					};
 				};
 			};
@@ -125,9 +157,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85A661702514E5CD009ADE43 /* LaunchScreen.storyboard in Resources */,
-				85A6616D2514E5CD009ADE43 /* Assets.xcassets in Resources */,
-				85A6616B2514E5CD009ADE43 /* Main.storyboard in Resources */,
+				85A661862514E5E8009ADE43 /* Main.storyboard in Resources */,
+				85A661912514E5E8009ADE43 /* Assets.xcassets in Resources */,
+				85A661892514E5E8009ADE43 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +170,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85A661682514E5CD009ADE43 /* ViewController.swift in Sources */,
-				85A661642514E5CD009ADE43 /* AppDelegate.swift in Sources */,
-				85A661662514E5CD009ADE43 /* SceneDelegate.swift in Sources */,
+				85A6618F2514E5E8009ADE43 /* AppDelegate.swift in Sources */,
+				85A6618B2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel in Sources */,
+				85A661882514E5E8009ADE43 /* Measure.swift in Sources */,
+				85A6618E2514E5E8009ADE43 /* LiveImageViewController.swift in Sources */,
+				85A661902514E5E8009ADE43 /* VideoCapture.swift in Sources */,
+				85A661872514E5E8009ADE43 /* DrawingSegmentationView.swift in Sources */,
+				85A6618C2514E5E8009ADE43 /* DeepLabV3.mlmodel in Sources */,
+				85A661922514E5E8009ADE43 /* StillImageViewController.swift in Sources */,
+				85A6618A2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel in Sources */,
+				85A6618D2514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		85A661692514E5CD009ADE43 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				85A6616A2514E5CD009ADE43 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		85A6616E2514E5CD009ADE43 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				85A6616F2514E5CD009ADE43 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		85A661722514E5CD009ADE43 /* Debug */ = {
@@ -284,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 523XWQ22UQ;
 				INFOPLIST_FILE = BodyM/Info.plist;
@@ -293,6 +314,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = st.com.BodyM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BodyM/BodyM-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 523XWQ22UQ;
 				INFOPLIST_FILE = BodyM/Info.plist;
@@ -311,6 +335,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = st.com.BodyM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BodyM/BodyM-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
