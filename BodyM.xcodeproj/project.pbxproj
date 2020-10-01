@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		854A40242525CC12008AE702 /* model_hourglass.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 854A40222525CC12008AE702 /* model_hourglass.mlmodel */; };
+		854A40252525CC12008AE702 /* model_cpm.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 854A40232525CC12008AE702 /* model_cpm.mlmodel */; };
+		854A40402525D545008AE702 /* DrawingJointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A403F2525D545008AE702 /* DrawingJointView.swift */; };
+		854A40442525D575008AE702 /* PredictedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A40432525D575008AE702 /* PredictedPoint.swift */; };
+		854A40472525D59D008AE702 /* HeatmapPostProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A40462525D59D008AE702 /* HeatmapPostProcessor.swift */; };
+		854A404A2525D5C9008AE702 /* MovingAverageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A40492525D5C9008AE702 /* MovingAverageFilter.swift */; };
 		85A661862514E5E8009ADE43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A661782514E5E7009ADE43 /* Main.storyboard */; };
 		85A661872514E5E8009ADE43 /* DrawingSegmentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661792514E5E7009ADE43 /* DrawingSegmentationView.swift */; };
-		85A661882514E5E8009ADE43 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6617A2514E5E7009ADE43 /* Measure.swift */; };
 		85A661892514E5E8009ADE43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A6617B2514E5E7009ADE43 /* LaunchScreen.storyboard */; };
 		85A6618A2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 85A6617D2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel */; };
 		85A6618B2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 85A6617E2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel */; };
@@ -23,11 +28,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		854A40222525CC12008AE702 /* model_hourglass.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_hourglass.mlmodel; sourceTree = "<group>"; };
+		854A40232525CC12008AE702 /* model_cpm.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_cpm.mlmodel; sourceTree = "<group>"; };
+		854A403F2525D545008AE702 /* DrawingJointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingJointView.swift; sourceTree = "<group>"; };
+		854A40432525D575008AE702 /* PredictedPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictedPoint.swift; sourceTree = "<group>"; };
+		854A40462525D59D008AE702 /* HeatmapPostProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapPostProcessor.swift; sourceTree = "<group>"; };
+		854A40492525D5C9008AE702 /* MovingAverageFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingAverageFilter.swift; sourceTree = "<group>"; };
 		85A661602514E5CD009ADE43 /* BodyM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A661712514E5CD009ADE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85A661782514E5E7009ADE43 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		85A661792514E5E7009ADE43 /* DrawingSegmentationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingSegmentationView.swift; sourceTree = "<group>"; };
-		85A6617A2514E5E7009ADE43 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		85A6617B2514E5E7009ADE43 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A6617D2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3Int8LUT.mlmodel; sourceTree = "<group>"; };
 		85A6617E2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
@@ -78,12 +88,15 @@
 				85A661852514E5E8009ADE43 /* StillImageViewController.swift */,
 				85A661812514E5E8009ADE43 /* LiveImageViewController.swift */,
 				85A661782514E5E7009ADE43 /* Main.storyboard */,
-				85A6617A2514E5E7009ADE43 /* Measure.swift */,
 				85A6617C2514E5E8009ADE43 /* mlmodel */,
 				85A661802514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift */,
 				85A661832514E5E8009ADE43 /* VideoCapture.swift */,
 				85A661712514E5CD009ADE43 /* Info.plist */,
 				85A661932514E6D9009ADE43 /* BodyM-Bridging-Header.h */,
+				854A403F2525D545008AE702 /* DrawingJointView.swift */,
+				854A40432525D575008AE702 /* PredictedPoint.swift */,
+				854A40462525D59D008AE702 /* HeatmapPostProcessor.swift */,
+				854A40492525D5C9008AE702 /* MovingAverageFilter.swift */,
 			);
 			path = BodyM;
 			sourceTree = "<group>";
@@ -91,6 +104,8 @@
 		85A6617C2514E5E8009ADE43 /* mlmodel */ = {
 			isa = PBXGroup;
 			children = (
+				854A40232525CC12008AE702 /* model_cpm.mlmodel */,
+				854A40222525CC12008AE702 /* model_hourglass.mlmodel */,
 				85A6617D2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel */,
 				85A6617E2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel */,
 				85A6617F2514E5E8009ADE43 /* DeepLabV3.mlmodel */,
@@ -172,12 +187,17 @@
 			files = (
 				85A6618F2514E5E8009ADE43 /* AppDelegate.swift in Sources */,
 				85A6618B2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel in Sources */,
-				85A661882514E5E8009ADE43 /* Measure.swift in Sources */,
+				854A40242525CC12008AE702 /* model_hourglass.mlmodel in Sources */,
 				85A6618E2514E5E8009ADE43 /* LiveImageViewController.swift in Sources */,
+				854A404A2525D5C9008AE702 /* MovingAverageFilter.swift in Sources */,
 				85A661902514E5E8009ADE43 /* VideoCapture.swift in Sources */,
+				854A40472525D59D008AE702 /* HeatmapPostProcessor.swift in Sources */,
 				85A661872514E5E8009ADE43 /* DrawingSegmentationView.swift in Sources */,
 				85A6618C2514E5E8009ADE43 /* DeepLabV3.mlmodel in Sources */,
 				85A661922514E5E8009ADE43 /* StillImageViewController.swift in Sources */,
+				854A40252525CC12008AE702 /* model_cpm.mlmodel in Sources */,
+				854A40402525D545008AE702 /* DrawingJointView.swift in Sources */,
+				854A40442525D575008AE702 /* PredictedPoint.swift in Sources */,
 				85A6618A2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel in Sources */,
 				85A6618D2514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift in Sources */,
 			);

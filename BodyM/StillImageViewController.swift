@@ -1,11 +1,3 @@
-//
-//  StillImageViewController.swift
-//  SemanticSegmentation-CoreML
-//
-//  Created by Doyoung Gwak on 20/07/2019.
-//  Copyright © 2019 Doyoung Gwak. All rights reserved.
-//
-
 import UIKit
 import Vision
 
@@ -14,24 +6,33 @@ class StillImageViewController: UIViewController {
     // MARK: - UI Properties
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var drawingView: DrawingSegmentationView!
+    @IBOutlet weak var jointView: DrawingJointView!
     
     let imagePickerController = UIImagePickerController()
     
     // MARK - Core ML model
     // DeepLabV3(iOS12+), DeepLabV3FP16(iOS12+), DeepLabV3Int8LUT(iOS12+)
     let segmentationModel = DeepLabV3()
+    let posenetModel = model_cpm()
     
     // MARK: - Vision Properties
     var request: VNCoreMLRequest?
     var visionModel: VNCoreMLModel?
     
+    // Postprocess
+    var postProcessor: HeatmapPostProcessor = HeatmapPostProcessor()
+    var mvfilters: [MovingAverageFilter] = []
+    
+    var isSegmenting = true
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // setup ml model
-        setUpModel()
+        setUpModel(model: segmentationModel.model, isSegmenting: true) {
+            print("Bla-bla")
+            self.setUpModel(model: posenetModel.model, isSegmenting: false)
+        }
         
-        // image picker delegate setup
         imagePickerController.delegate = self
     }
     
@@ -40,14 +41,104 @@ class StillImageViewController: UIViewController {
     }
     
     // MARK: - Setup Core ML
-    func setUpModel() {
-        if let visionModel = try? VNCoreMLModel(for: segmentationModel.model) {
+    func setUpModel(model: MLModel, isSegmenting: Bool, completion: () -> Void = {  }) {
+        print("Bla")
+        self.isSegmenting = isSegmenting
+        if let visionModel = try? VNCoreMLModel(for: model) {
             self.visionModel = visionModel
             request = VNCoreMLRequest(model: visionModel, completionHandler: visionRequestDidComplete)
             request?.imageCropAndScaleOption = .scaleFill
         } else {
-            fatalError()
+            fatalError("cannot load the ml model")
         }
+        completion()
+    }
+}
+
+// MARK: - Inference
+extension StillImageViewController {
+    // prediction
+    func predict(with url: URL) {
+        guard let request = request else { fatalError() }
+        // vision framework configures the input size of image following our model's input configuration automatically
+        let handler = VNImageRequestHandler(url: url, options: [:])
+        try? handler.perform([request])
+    }
+    
+    // post-processing
+    func visionRequestDidComplete(request: VNRequest, error: Error?) {
+        if isSegmenting {
+            if let observations = request.results as? [VNCoreMLFeatureValueObservation],
+                let segmentationmap = observations.first?.featureValue.multiArrayValue {
+                
+                drawingView.segmentationmap = SegmentationResultMLMultiArray(mlMultiArray: segmentationmap)
+            }
+        } else {
+            if let observations = request.results as? [VNCoreMLFeatureValueObservation],
+                let heatmaps = observations.first?.featureValue.multiArrayValue {
+
+                /* ========================= post-processing ========================= */
+
+                /* ------------------ convert heatmap to point array ----------------- */
+                var predictedPoints = postProcessor.convertToPredictedPoints(from: heatmaps)
+
+                /* --------------------- moving average filter ----------------------- */
+                if predictedPoints.count != mvfilters.count {
+                    mvfilters = predictedPoints.map { _ in MovingAverageFilter(limit: 3) }
+                }
+                for (predictedPoint, filter) in zip(predictedPoints, mvfilters) {
+                    filter.add(element: predictedPoint)
+                }
+                predictedPoints = mvfilters.map { $0.averagedValue() }
+
+                /* ======================= display the results ======================= */
+                DispatchQueue.main.async { [self] in
+                    // draw line
+                    self.jointView.bodyPoints = predictedPoints
+                    
+                    let realHeight:CGFloat = 182
+                    
+                    guard let topPointY = predictedPoints[0]?.maxPoint.y, let leftAnklePointY = predictedPoints[13]?.maxPoint.y, let rightAnklePointY = predictedPoints[10]?.maxPoint.y else { return }
+                    let bottomPointY = leftAnklePointY >= rightAnklePointY ? leftAnklePointY : rightAnklePointY
+                    
+                    let systemHeight = bottomPointY - topPointY
+                    let k = realHeight / systemHeight
+                    
+                    guard let top = predictedPoints[0]?.maxPoint,
+                          let neck = predictedPoints[1]?.maxPoint,
+                          let rShoulder = predictedPoints[2]?.maxPoint,
+                          let rElbow = predictedPoints[3]?.maxPoint,
+                          let rWrist = predictedPoints[4]?.maxPoint,
+                          let lShoulder = predictedPoints[5]?.maxPoint,
+                          let lElbow = predictedPoints[6]?.maxPoint,
+                          let lWrist = predictedPoints[7]?.maxPoint,
+                          let rHip = predictedPoints[8]?.maxPoint,
+                          let rKnee = predictedPoints[9]?.maxPoint,
+                          let rAnkle = predictedPoints[10]?.maxPoint,
+                          let lHip = predictedPoints[11]?.maxPoint,
+                          let lKnee = predictedPoints[12]?.maxPoint,
+                          let lAnkle = predictedPoints[13]?.maxPoint else { return }
+                    
+                    let distTopNeck = self.findDistance(between: top, point2: neck)
+                    let distRShoulderRElbow = self.findDistance(between: rShoulder, point2: rElbow)
+                    let distRElbowRWrist = self.findDistance(between: rElbow, point2: rWrist)
+                    let distLShoulderLElbow = self.findDistance(between: lShoulder, point2: lElbow)
+                    let distLElbowLWrist = self.findDistance(between: lElbow, point2: lWrist)
+                    let distRHipRKnee = self.findDistance(between: rHip, point2: rKnee)
+                    let distRKneeRAnkle = self.findDistance(between: rKnee, point2: rAnkle)
+                    let distLHipLKnee = self.findDistance(between: lHip, point2: lKnee)
+                    let distLKneeLAnkle = self.findDistance(between: lKnee, point2: lAnkle)
+                }
+            }
+        }
+        print("Bla-bla-bla")
+    }
+    
+    func findDistance(between point1: CGPoint, point2: CGPoint) -> CGFloat{
+        let a = pow(point2.x - point1.x, 2)
+        let b = pow(point2.y - point1.y, 2)
+        let d = sqrtf(Float(a + b))
+        return CGFloat(d)
     }
 }
 
@@ -62,25 +153,3 @@ extension StillImageViewController: UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true, completion: nil)
     }
 }
-
-// MARK: - Inference
-extension StillImageViewController {
-    // prediction
-    func predict(with url: URL) {
-        guard let request = request else { fatalError() }
-        
-        // vision framework configures the input size of image following our model's input configuration automatically
-        let handler = VNImageRequestHandler(url: url, options: [:])
-        try? handler.perform([request])
-    }
-    
-    // post-processing
-    func visionRequestDidComplete(request: VNRequest, error: Error?) {
-        if let observations = request.results as? [VNCoreMLFeatureValueObservation],
-            let segmentationmap = observations.first?.featureValue.multiArrayValue {
-            
-            drawingView.segmentationmap = SegmentationResultMLMultiArray(mlMultiArray: segmentationmap)
-        }
-    }
-}
-

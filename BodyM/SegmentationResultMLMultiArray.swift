@@ -1,11 +1,3 @@
-//
-//  SegmentationPostProcessor.swift
-//  DepthPrediction-CoreML
-//
-//  Created by Doyoung Gwak on 20/07/2019.
-//  Copyright © 2019 Doyoung Gwak. All rights reserved.
-//
-
 import CoreML
 
 class SegmentationResultMLMultiArray {
