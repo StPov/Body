@@ -15,9 +15,6 @@ class LiveImageViewController: UIViewController {
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var drawingView: DrawingSegmentationView!
     
-    @IBOutlet weak var inferenceLabel: UILabel!
-    @IBOutlet weak var etimeLabel: UILabel!
-    @IBOutlet weak var fpsLabel: UILabel!
     
     // MARK: - AV Properties
     var videoCapture: VideoCapture!
@@ -25,22 +22,6 @@ class LiveImageViewController: UIViewController {
     // MARK - Core ML model
     // DeepLabV3(iOS12+), DeepLabV3FP16(iOS12+), DeepLabV3Int8LUT(iOS12+)
     let segmentationModel = DeepLabV3Int8LUT()
-
-    
-//    11 Pro
-//    DeepLabV3        : 37 465 1
-//    DeepLabV3FP16    : 40 511 1
-//    DeepLabV3Int8LUT : 40 520 1
-//
-//    XS
-//    DeepLabV3        : 135 409 2
-//    DeepLabV3FP16    : 136 403 2
-//    DeepLabV3Int8LUT : 135 412 2
-//
-//    X
-//    DeepLabV3        : 177 531 1
-//    DeepLabV3FP16    : 177 530 1
-//    DeepLabV3Int8LUT : 177 517 1
     
     // MARK: - Vision Properties
     var request: VNCoreMLRequest?
@@ -48,12 +29,6 @@ class LiveImageViewController: UIViewController {
     
     var isInferencing = false
     
-    // MARK: - Performance Measurement Property
-    private let 👨‍🔧 = 📏()
-    
-    let maf1 = MovingAverageFilter()
-    let maf2 = MovingAverageFilter()
-    let maf3 = MovingAverageFilter()
     
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
@@ -64,14 +39,6 @@ class LiveImageViewController: UIViewController {
         
         // setup camera
         setUpCamera()
-        
-        // setup delegate for performance measurement
-        👨‍🔧.delegate = self
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -133,9 +100,6 @@ extension LiveImageViewController: VideoCaptureDelegate {
         if let pixelBuffer = pixelBuffer, !isInferencing {
             isInferencing = true
             
-            // start of measure
-            self.👨‍🔧.🎬👏()
-            
             // predict!
             predict(with: pixelBuffer)
         }
@@ -155,7 +119,6 @@ extension LiveImageViewController {
     
     // post-processing
     func visionRequestDidComplete(request: VNRequest, error: Error?) {
-        self.👨‍🔧.🏷(with: "endInference")
         
         if let observations = request.results as? [VNCoreMLFeatureValueObservation],
             let segmentationmap = observations.first?.featureValue.multiArrayValue {
@@ -166,44 +129,11 @@ extension LiveImageViewController {
                 self?.drawingView.segmentationmap = segmentationResultMLMultiArray
                 
                 // end of measure
-                self?.👨‍🔧.🎬🤚()
                 self?.isInferencing = false
             }
         } else {
             // end of measure
-            self.👨‍🔧.🎬🤚()
             isInferencing = false
         }
-    }
-}
-
-// MARK: - 📏(Performance Measurement) Delegate
-extension LiveImageViewController: 📏Delegate {
-    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int) {
-        self.maf1.append(element: Int(inferenceTime*1000.0))
-        self.maf2.append(element: Int(executionTime*1000.0))
-        self.maf3.append(element: fps)
-        
-        self.inferenceLabel.text = "inference: \(self.maf1.averageValue) ms"
-        self.etimeLabel.text = "execution: \(self.maf2.averageValue) ms"
-        self.fpsLabel.text = "fps: \(self.maf3.averageValue)"
-    }
-}
-
-class MovingAverageFilter {
-    private var arr: [Int] = []
-    private let maxCount = 10
-    
-    public func append(element: Int) {
-        arr.append(element)
-        if arr.count > maxCount {
-            arr.removeFirst()
-        }
-    }
-    
-    public var averageValue: Int {
-        guard !arr.isEmpty else { return 0 }
-        let sum = arr.reduce(0) { $0 + $1 }
-        return Int(Double(sum) / Double(arr.count))
     }
 }
