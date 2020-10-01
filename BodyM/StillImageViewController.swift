@@ -29,7 +29,6 @@ class StillImageViewController: UIViewController {
         super.viewDidLoad()
 
         setUpModel(model: segmentationModel.model, isSegmenting: true) {
-            print("Bla-bla")
             self.setUpModel(model: posenetModel.model, isSegmenting: false)
         }
         
@@ -42,7 +41,6 @@ class StillImageViewController: UIViewController {
     
     // MARK: - Setup Core ML
     func setUpModel(model: MLModel, isSegmenting: Bool, completion: () -> Void = {  }) {
-        print("Bla")
         self.isSegmenting = isSegmenting
         if let visionModel = try? VNCoreMLModel(for: model) {
             self.visionModel = visionModel
@@ -131,7 +129,6 @@ extension StillImageViewController {
                 }
             }
         }
-        print("Bla-bla-bla")
     }
     
     func findDistance(between point1: CGPoint, point2: CGPoint) -> CGFloat{
