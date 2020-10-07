@@ -9,51 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Live Image-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="LiveImageViewController" customModule="BodyM" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAF-1N-GU4">
-                                <rect key="frame" x="0.0" y="69" width="414" height="552"/>
-                                <color key="backgroundColor" red="0.86274509799999999" green="0.63529411759999999" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="JAF-1N-GU4" secondAttribute="height" multiplier="3:4" priority="750" id="1PJ-If-ZK3"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZz-xg-qgT" customClass="DrawingSegmentationView" customModule="BodyM" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="69" width="414" height="552"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="YZz-xg-qgT" secondAttribute="height" multiplier="3:4" id="1gl-1z-9i5"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="JAF-1N-GU4" firstAttribute="width" secondItem="JAF-1N-GU4" secondAttribute="height" multiplier="3:4" priority="750" id="1jT-Jl-EPl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YZz-xg-qgT" secondAttribute="trailing" id="46o-gU-ADq"/>
-                            <constraint firstItem="JAF-1N-GU4" firstAttribute="top" secondItem="YZz-xg-qgT" secondAttribute="top" id="Gch-Md-WeZ"/>
-                            <constraint firstItem="JAF-1N-GU4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="K8m-kd-6uF"/>
-                            <constraint firstItem="YZz-xg-qgT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lBb-WH-MoB"/>
-                            <constraint firstItem="JAF-1N-GU4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mJD-mu-vS6"/>
-                            <constraint firstItem="JAF-1N-GU4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="mfk-N8-3gT"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Live Image" id="BjE-eP-ACy"/>
-                    <connections>
-                        <outlet property="drawingView" destination="YZz-xg-qgT" id="9FY-Vh-I2f"/>
-                        <outlet property="videoPreview" destination="JAF-1N-GU4" id="oG9-qM-7MM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
-        </scene>
         <!--Still Image View Controller-->
         <scene sceneID="IS1-oH-MuW">
             <objects>
@@ -62,10 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LD0-DY-fW3" customClass="DrawingJointView" customModule="BodyM" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R9C-5j-ZDa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.40175513699999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,17 +30,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gcq-ZI-Sh1" firstAttribute="top" secondItem="R9C-5j-ZDa" secondAttribute="top" id="1RK-GN-GFy"/>
-                            <constraint firstItem="pfR-pQ-aIK" firstAttribute="bottom" secondItem="LD0-DY-fW3" secondAttribute="bottom" id="1VX-GH-Q8U"/>
-                            <constraint firstItem="LD0-DY-fW3" firstAttribute="leading" secondItem="pfR-pQ-aIK" secondAttribute="leading" id="5ow-vI-jxp"/>
-                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="leading" secondItem="LD0-DY-fW3" secondAttribute="leading" id="8ts-MT-v1g"/>
-                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="trailing" secondItem="LD0-DY-fW3" secondAttribute="trailing" id="Bp6-Su-bcW"/>
+                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="top" secondItem="pfR-pQ-aIK" secondAttribute="top" id="499-Ww-szU"/>
                             <constraint firstItem="gcq-ZI-Sh1" firstAttribute="trailing" secondItem="R9C-5j-ZDa" secondAttribute="trailing" id="Gkj-l9-qQo"/>
-                            <constraint firstItem="LD0-DY-fW3" firstAttribute="top" secondItem="pfR-pQ-aIK" secondAttribute="top" id="Iww-5x-FVc"/>
-                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="top" secondItem="LD0-DY-fW3" secondAttribute="top" id="N13-po-uAv"/>
-                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="bottom" secondItem="LD0-DY-fW3" secondAttribute="bottom" id="PNC-6G-2aV"/>
+                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="bottom" secondItem="pfR-pQ-aIK" secondAttribute="bottom" id="Lmk-8d-dgV"/>
+                            <constraint firstItem="gcq-ZI-Sh1" firstAttribute="leading" secondItem="pfR-pQ-aIK" secondAttribute="leading" id="N9h-Ze-4xP"/>
                             <constraint firstItem="gcq-ZI-Sh1" firstAttribute="leading" secondItem="R9C-5j-ZDa" secondAttribute="leading" id="Xia-N9-Q1I"/>
-                            <constraint firstItem="pfR-pQ-aIK" firstAttribute="trailing" secondItem="LD0-DY-fW3" secondAttribute="trailing" id="bcO-QR-Mn3"/>
                             <constraint firstItem="gcq-ZI-Sh1" firstAttribute="bottom" secondItem="R9C-5j-ZDa" secondAttribute="bottom" id="mnJ-EV-d7D"/>
+                            <constraint firstItem="R9C-5j-ZDa" firstAttribute="centerX" secondItem="rrC-89-LGp" secondAttribute="centerX" id="qZZ-LG-3Lc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZKO-r5-lBo">
@@ -101,7 +48,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="drawingView" destination="gcq-ZI-Sh1" id="AGa-6O-SYP"/>
-                        <outlet property="jointView" destination="LD0-DY-fW3" id="jwC-jM-POf"/>
                         <outlet property="mainImageView" destination="R9C-5j-ZDa" id="PYL-9c-BTI"/>
                     </connections>
                 </viewController>
@@ -120,7 +66,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="0lQ-nP-qr8"/>
                         <segue destination="i8C-c5-qYh" kind="relationship" relationship="viewControllers" id="90f-l7-yLE"/>
                     </connections>
                 </tabBarController>
