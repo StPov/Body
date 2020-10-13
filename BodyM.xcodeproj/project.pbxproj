@@ -13,6 +13,8 @@
 		854A40442525D575008AE702 /* PredictedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A40432525D575008AE702 /* PredictedPoint.swift */; };
 		854A40472525D59D008AE702 /* HeatmapPostProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A40462525D59D008AE702 /* HeatmapPostProcessor.swift */; };
 		854A404A2525D5C9008AE702 /* MovingAverageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A40492525D5C9008AE702 /* MovingAverageFilter.swift */; };
+		858308FD2535EAE900B225E4 /* SwiftImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8583087C2535EA1C00B225E4 /* SwiftImage.framework */; };
+		858308FE2535EAE900B225E4 /* SwiftImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8583087C2535EA1C00B225E4 /* SwiftImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85A661862514E5E8009ADE43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A661782514E5E7009ADE43 /* Main.storyboard */; };
 		85A661872514E5E8009ADE43 /* DrawingSegmentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661792514E5E7009ADE43 /* DrawingSegmentationView.swift */; };
 		85A661892514E5E8009ADE43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A6617B2514E5E7009ADE43 /* LaunchScreen.storyboard */; };
@@ -20,12 +22,125 @@
 		85A6618B2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 85A6617E2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel */; };
 		85A6618C2514E5E8009ADE43 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 85A6617F2514E5E8009ADE43 /* DeepLabV3.mlmodel */; };
 		85A6618D2514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661802514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift */; };
-		85A6618E2514E5E8009ADE43 /* LiveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661812514E5E8009ADE43 /* LiveImageViewController.swift */; };
 		85A6618F2514E5E8009ADE43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661822514E5E8009ADE43 /* AppDelegate.swift */; };
-		85A661902514E5E8009ADE43 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661832514E5E8009ADE43 /* VideoCapture.swift */; };
 		85A661912514E5E8009ADE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A661842514E5E8009ADE43 /* Assets.xcassets */; };
 		85A661922514E5E8009ADE43 /* StillImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661852514E5E8009ADE43 /* StillImageViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8583087B2535EA1C00B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134A0E1F85226C005592A2;
+			remoteInfo = "SwiftImage-iOS";
+		};
+		8583087D2535EA1C00B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134A171F85226D005592A2;
+			remoteInfo = "SwiftImageTests-iOS";
+		};
+		8583087F2535EA1C00B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134A601F852C80005592A2;
+			remoteInfo = "SwiftImage-macOS";
+		};
+		858308812535EA1C00B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134A681F852C80005592A2;
+			remoteInfo = "SwiftImageTests-macOS";
+		};
+		858308832535EA1C00B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134AA21F85D1F9005592A2;
+			remoteInfo = "SwiftImage-tvOS";
+		};
+		858308852535EA1C00B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134AAA1F85D1FA005592A2;
+			remoteInfo = "SwiftImageTests-tvOS";
+		};
+		858308872535EA1C00B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134AD21F85D800005592A2;
+			remoteInfo = "SwiftImage-watchOS";
+		};
+		858308E52535EA4600B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134A0E1F85226C005592A2;
+			remoteInfo = "SwiftImage-iOS";
+		};
+		858308E72535EA4600B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134A171F85226D005592A2;
+			remoteInfo = "SwiftImageTests-iOS";
+		};
+		858308E92535EA4600B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134A601F852C80005592A2;
+			remoteInfo = "SwiftImage-macOS";
+		};
+		858308EB2535EA4600B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134A681F852C80005592A2;
+			remoteInfo = "SwiftImageTests-macOS";
+		};
+		858308ED2535EA4600B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134AA21F85D1F9005592A2;
+			remoteInfo = "SwiftImage-tvOS";
+		};
+		858308EF2535EA4600B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134AAA1F85D1FA005592A2;
+			remoteInfo = "SwiftImageTests-tvOS";
+		};
+		858308F12535EA4600B225E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D6134AD21F85D800005592A2;
+			remoteInfo = "SwiftImage-watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		858308FF2535EAEA00B225E4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				858308FE2535EAE900B225E4 /* SwiftImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		854A40222525CC12008AE702 /* model_hourglass.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_hourglass.mlmodel; sourceTree = "<group>"; };
@@ -34,6 +149,8 @@
 		854A40432525D575008AE702 /* PredictedPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictedPoint.swift; sourceTree = "<group>"; };
 		854A40462525D59D008AE702 /* HeatmapPostProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapPostProcessor.swift; sourceTree = "<group>"; };
 		854A40492525D5C9008AE702 /* MovingAverageFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingAverageFilter.swift; sourceTree = "<group>"; };
+		858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftImage.xcodeproj; path = "../../../../../Downloads/swift-image-master/SwiftImage.xcodeproj"; sourceTree = "<group>"; };
+		858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftImage.xcodeproj; path = "../../../../Downloads/swift-image-master/SwiftImage.xcodeproj"; sourceTree = "<group>"; };
 		85A661602514E5CD009ADE43 /* BodyM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A661712514E5CD009ADE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85A661782514E5E7009ADE43 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -43,9 +160,7 @@
 		85A6617E2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
 		85A6617F2514E5E8009ADE43 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
 		85A661802514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentationResultMLMultiArray.swift; sourceTree = "<group>"; };
-		85A661812514E5E8009ADE43 /* LiveImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveImageViewController.swift; sourceTree = "<group>"; };
 		85A661822514E5E8009ADE43 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85A661832514E5E8009ADE43 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		85A661842514E5E8009ADE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85A661852514E5E8009ADE43 /* StillImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StillImageViewController.swift; sourceTree = "<group>"; };
 		85A661932514E6D9009ADE43 /* BodyM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BodyM-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -56,17 +171,77 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858308FD2535EAE900B225E4 /* SwiftImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		858308692535E50D00B225E4 /* Processing */ = {
+			isa = PBXGroup;
+			children = (
+				85A661792514E5E7009ADE43 /* DrawingSegmentationView.swift */,
+				85A661802514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift */,
+				854A403F2525D545008AE702 /* DrawingJointView.swift */,
+				854A40432525D575008AE702 /* PredictedPoint.swift */,
+				854A40462525D59D008AE702 /* HeatmapPostProcessor.swift */,
+				854A40492525D5C9008AE702 /* MovingAverageFilter.swift */,
+			);
+			path = Processing;
+			sourceTree = "<group>";
+		};
+		8583086E2535E8FC00B225E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85A6617C2514E5E8009ADE43 /* MLModels */,
+				85A661842514E5E8009ADE43 /* Assets.xcassets */,
+				858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		858308722535EA1B00B225E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8583087C2535EA1C00B225E4 /* SwiftImage.framework */,
+				8583087E2535EA1C00B225E4 /* SwiftImageTests-iOS.xctest */,
+				858308802535EA1C00B225E4 /* SwiftImage.framework */,
+				858308822535EA1C00B225E4 /* SwiftImageTests.xctest */,
+				858308842535EA1C00B225E4 /* SwiftImage.framework */,
+				858308862535EA1C00B225E4 /* SwiftImageTests.xctest */,
+				858308882535EA1C00B225E4 /* SwiftImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		858308DC2535EA4600B225E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				858308E62535EA4600B225E4 /* SwiftImage.framework */,
+				858308E82535EA4600B225E4 /* SwiftImageTests-iOS.xctest */,
+				858308EA2535EA4600B225E4 /* SwiftImage.framework */,
+				858308EC2535EA4600B225E4 /* SwiftImageTests.xctest */,
+				858308EE2535EA4600B225E4 /* SwiftImage.framework */,
+				858308F02535EA4600B225E4 /* SwiftImageTests.xctest */,
+				858308F22535EA4600B225E4 /* SwiftImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		858308FC2535EAE900B225E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		85A661572514E5CC009ADE43 = {
 			isa = PBXGroup;
 			children = (
 				85A661622514E5CD009ADE43 /* BodyM */,
 				85A661612514E5CD009ADE43 /* Products */,
+				858308FC2535EAE900B225E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,36 +256,29 @@
 		85A661622514E5CD009ADE43 /* BodyM */ = {
 			isa = PBXGroup;
 			children = (
+				8583086E2535E8FC00B225E4 /* Resources */,
+				858308692535E50D00B225E4 /* Processing */,
 				85A661822514E5E8009ADE43 /* AppDelegate.swift */,
-				85A661842514E5E8009ADE43 /* Assets.xcassets */,
-				85A661792514E5E7009ADE43 /* DrawingSegmentationView.swift */,
 				85A6617B2514E5E7009ADE43 /* LaunchScreen.storyboard */,
 				85A661852514E5E8009ADE43 /* StillImageViewController.swift */,
-				85A661812514E5E8009ADE43 /* LiveImageViewController.swift */,
 				85A661782514E5E7009ADE43 /* Main.storyboard */,
-				85A6617C2514E5E8009ADE43 /* mlmodel */,
-				85A661802514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift */,
-				85A661832514E5E8009ADE43 /* VideoCapture.swift */,
 				85A661712514E5CD009ADE43 /* Info.plist */,
 				85A661932514E6D9009ADE43 /* BodyM-Bridging-Header.h */,
-				854A403F2525D545008AE702 /* DrawingJointView.swift */,
-				854A40432525D575008AE702 /* PredictedPoint.swift */,
-				854A40462525D59D008AE702 /* HeatmapPostProcessor.swift */,
-				854A40492525D5C9008AE702 /* MovingAverageFilter.swift */,
 			);
 			path = BodyM;
 			sourceTree = "<group>";
 		};
-		85A6617C2514E5E8009ADE43 /* mlmodel */ = {
+		85A6617C2514E5E8009ADE43 /* MLModels */ = {
 			isa = PBXGroup;
 			children = (
+				858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */,
 				854A40232525CC12008AE702 /* model_cpm.mlmodel */,
 				854A40222525CC12008AE702 /* model_hourglass.mlmodel */,
 				85A6617D2514E5E8009ADE43 /* DeepLabV3Int8LUT.mlmodel */,
 				85A6617E2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel */,
 				85A6617F2514E5E8009ADE43 /* DeepLabV3.mlmodel */,
 			);
-			path = mlmodel;
+			path = MLModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +291,7 @@
 				85A6615C2514E5CD009ADE43 /* Sources */,
 				85A6615D2514E5CD009ADE43 /* Frameworks */,
 				85A6615E2514E5CD009ADE43 /* Resources */,
+				858308FF2535EAEA00B225E4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,12 +329,123 @@
 			mainGroup = 85A661572514E5CC009ADE43;
 			productRefGroup = 85A661612514E5CD009ADE43 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 858308722535EA1B00B225E4 /* Products */;
+					ProjectRef = 858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */;
+				},
+				{
+					ProductGroup = 858308DC2535EA4600B225E4 /* Products */;
+					ProjectRef = 858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				85A6615F2514E5CD009ADE43 /* BodyM */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8583087C2535EA1C00B225E4 /* SwiftImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftImage.framework;
+			remoteRef = 8583087B2535EA1C00B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8583087E2535EA1C00B225E4 /* SwiftImageTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftImageTests-iOS.xctest";
+			remoteRef = 8583087D2535EA1C00B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308802535EA1C00B225E4 /* SwiftImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftImage.framework;
+			remoteRef = 8583087F2535EA1C00B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308822535EA1C00B225E4 /* SwiftImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftImageTests.xctest;
+			remoteRef = 858308812535EA1C00B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308842535EA1C00B225E4 /* SwiftImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftImage.framework;
+			remoteRef = 858308832535EA1C00B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308862535EA1C00B225E4 /* SwiftImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftImageTests.xctest;
+			remoteRef = 858308852535EA1C00B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308882535EA1C00B225E4 /* SwiftImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftImage.framework;
+			remoteRef = 858308872535EA1C00B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308E62535EA4600B225E4 /* SwiftImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftImage.framework;
+			remoteRef = 858308E52535EA4600B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308E82535EA4600B225E4 /* SwiftImageTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftImageTests-iOS.xctest";
+			remoteRef = 858308E72535EA4600B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308EA2535EA4600B225E4 /* SwiftImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftImage.framework;
+			remoteRef = 858308E92535EA4600B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308EC2535EA4600B225E4 /* SwiftImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftImageTests.xctest;
+			remoteRef = 858308EB2535EA4600B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308EE2535EA4600B225E4 /* SwiftImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftImage.framework;
+			remoteRef = 858308ED2535EA4600B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308F02535EA4600B225E4 /* SwiftImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftImageTests.xctest;
+			remoteRef = 858308EF2535EA4600B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		858308F22535EA4600B225E4 /* SwiftImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftImage.framework;
+			remoteRef = 858308F12535EA4600B225E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		85A6615E2514E5CD009ADE43 /* Resources */ = {
@@ -188,9 +468,7 @@
 				85A6618F2514E5E8009ADE43 /* AppDelegate.swift in Sources */,
 				85A6618B2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel in Sources */,
 				854A40242525CC12008AE702 /* model_hourglass.mlmodel in Sources */,
-				85A6618E2514E5E8009ADE43 /* LiveImageViewController.swift in Sources */,
 				854A404A2525D5C9008AE702 /* MovingAverageFilter.swift in Sources */,
-				85A661902514E5E8009ADE43 /* VideoCapture.swift in Sources */,
 				854A40472525D59D008AE702 /* HeatmapPostProcessor.swift in Sources */,
 				85A661872514E5E8009ADE43 /* DrawingSegmentationView.swift in Sources */,
 				85A6618C2514E5E8009ADE43 /* DeepLabV3.mlmodel in Sources */,

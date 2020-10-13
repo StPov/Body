@@ -1,5 +1,6 @@
 import UIKit
 import Vision
+import SwiftImage
 
 class StillImageViewController: UIViewController {
 
@@ -45,7 +46,6 @@ class StillImageViewController: UIViewController {
         if isSegmenting {
             if let visionModel = try? VNCoreMLModel(for: model) {
                 self.visionModelSeg = visionModel
-    //            request = VNCoreMLRequest(model: visionModel, completionHandler: visionRequestDidComplete)
                 requestSeg = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                     self.blo(request: request)
                 })
@@ -56,7 +56,6 @@ class StillImageViewController: UIViewController {
         } else {
             if let visionModel = try? VNCoreMLModel(for: model) {
                 self.visionModel = visionModel
-    //            request = VNCoreMLRequest(model: visionModel, completionHandler: visionRequestDidComplete)
                 request = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                     self.bla(request: request)
                 })
@@ -70,7 +69,6 @@ class StillImageViewController: UIViewController {
 
 // MARK: - Inference
 extension StillImageViewController {
-    // prediction
     func predict(with url: URL) {
         guard let request1 = requestSeg else { fatalError() }
         guard let request2 = request else { fatalError() }
@@ -79,12 +77,6 @@ extension StillImageViewController {
         try? handler.perform([request1, request2])
         
     }
-    
-    // post-processing
-//    func visionRequestDidComplete(request: VNRequest, error: Error?) {
-//        blo(request: request)
-//        bla(request: request)
-//    }
 }
 
 // MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
@@ -138,9 +130,13 @@ extension StillImageViewController {
         return CGFloat(d)
     }
     
-    func getMeasures(realHeight: CGFloat, predictedPoints: [PredictedPoint?]) {
+    func findMiddlePoint(onePoint: CGPoint, anotherPoint: CGPoint) -> CGPoint{
+        return CGPoint(x: (onePoint.x + anotherPoint.x) / 2, y: (onePoint.y + anotherPoint.y) / 2)
+    }
+    
+    func getMeasures(realHeight: CGFloat, predictedPoints: [PredictedPoint?]) -> [(type: String, distance: CGFloat)]? {
             
-        guard let topPointY = predictedPoints[0]?.maxPoint.y, let leftAnklePointY = predictedPoints[13]?.maxPoint.y, let rightAnklePointY = predictedPoints[10]?.maxPoint.y else { return }
+        guard let topPointY = predictedPoints[0]?.maxPoint.y, let leftAnklePointY = predictedPoints[13]?.maxPoint.y, let rightAnklePointY = predictedPoints[10]?.maxPoint.y else { return nil}
         let bottomPointY = leftAnklePointY >= rightAnklePointY ? leftAnklePointY : rightAnklePointY
             
         let systemHeight = bottomPointY - topPointY
@@ -159,16 +155,20 @@ extension StillImageViewController {
             let rAnkle = predictedPoints[10]?.maxPoint,
             let lHip = predictedPoints[11]?.maxPoint,
             let lKnee = predictedPoints[12]?.maxPoint,
-            let lAnkle = predictedPoints[13]?.maxPoint else { return }
+            let lAnkle = predictedPoints[13]?.maxPoint else { return nil}
+        
+        var bla = [(type: String, dist: CGFloat)]()
             
-        let distTopNeck = self.findDistance(between: top, point2: neck)
-        let distRShoulderRElbow = self.findDistance(between: rShoulder, point2: rElbow)
-        let distRElbowRWrist = self.findDistance(between: rElbow, point2: rWrist)
-        let distLShoulderLElbow = self.findDistance(between: lShoulder, point2: lElbow)
-        let distLElbowLWrist = self.findDistance(between: lElbow, point2: lWrist)
-        let distRHipRKnee = self.findDistance(between: rHip, point2: rKnee)
-        let distRKneeRAnkle = self.findDistance(between: rKnee, point2: rAnkle)
-        let distLHipLKnee = self.findDistance(between: lHip, point2: lKnee)
-        let distLKneeLAnkle = self.findDistance(between: lKnee, point2: lAnkle)
+        let distTopNeck = findDistance(between: top, point2: neck)
+//        bla.append()
+        let distRShoulderRElbow = findDistance(between: rShoulder, point2: rElbow)
+        let distRElbowRWrist = findDistance(between: rElbow, point2: rWrist)
+        let distLShoulderLElbow = findDistance(between: lShoulder, point2: lElbow)
+        let distLElbowLWrist = findDistance(between: lElbow, point2: lWrist)
+        let distRHipRKnee = findDistance(between: rHip, point2: rKnee)
+        let distRKneeRAnkle = findDistance(between: rKnee, point2: rAnkle)
+        let distLHipLKnee = findDistance(between: lHip, point2: lKnee)
+        let distLKneeLAnkle = findDistance(between: lKnee, point2: lAnkle)
+        return nil
     }
 }
