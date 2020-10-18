@@ -13,8 +13,11 @@
 		854A40442525D575008AE702 /* PredictedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A40432525D575008AE702 /* PredictedPoint.swift */; };
 		854A40472525D59D008AE702 /* HeatmapPostProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A40462525D59D008AE702 /* HeatmapPostProcessor.swift */; };
 		854A404A2525D5C9008AE702 /* MovingAverageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854A40492525D5C9008AE702 /* MovingAverageFilter.swift */; };
+		857A792D253C8FB300CD794B /* UIView+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A792C253C8FB200CD794B /* UIView+UIImage.swift */; };
 		858308FD2535EAE900B225E4 /* SwiftImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8583087C2535EA1C00B225E4 /* SwiftImage.framework */; };
 		858308FE2535EAE900B225E4 /* SwiftImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8583087C2535EA1C00B225E4 /* SwiftImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		858309392536F92B00B225E4 /* MainViewController + Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858309382536F92B00B225E4 /* MainViewController + Calculations.swift */; };
+		858309502537129400B225E4 /* MainViewController + Processing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8583094F2537129400B225E4 /* MainViewController + Processing.swift */; };
 		85A661862514E5E8009ADE43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A661782514E5E7009ADE43 /* Main.storyboard */; };
 		85A661872514E5E8009ADE43 /* DrawingSegmentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661792514E5E7009ADE43 /* DrawingSegmentationView.swift */; };
 		85A661892514E5E8009ADE43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A6617B2514E5E7009ADE43 /* LaunchScreen.storyboard */; };
@@ -24,7 +27,7 @@
 		85A6618D2514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661802514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift */; };
 		85A6618F2514E5E8009ADE43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661822514E5E8009ADE43 /* AppDelegate.swift */; };
 		85A661912514E5E8009ADE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A661842514E5E8009ADE43 /* Assets.xcassets */; };
-		85A661922514E5E8009ADE43 /* StillImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661852514E5E8009ADE43 /* StillImageViewController.swift */; };
+		85A661922514E5E8009ADE43 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A661852514E5E8009ADE43 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,8 +152,11 @@
 		854A40432525D575008AE702 /* PredictedPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictedPoint.swift; sourceTree = "<group>"; };
 		854A40462525D59D008AE702 /* HeatmapPostProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapPostProcessor.swift; sourceTree = "<group>"; };
 		854A40492525D5C9008AE702 /* MovingAverageFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingAverageFilter.swift; sourceTree = "<group>"; };
+		857A792C253C8FB200CD794B /* UIView+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UIImage.swift"; sourceTree = "<group>"; };
 		858308712535EA1B00B225E4 /* SwiftImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftImage.xcodeproj; path = "../../../../../Downloads/swift-image-master/SwiftImage.xcodeproj"; sourceTree = "<group>"; };
 		858308DB2535EA4600B225E4 /* SwiftImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftImage.xcodeproj; path = "../../../../Downloads/swift-image-master/SwiftImage.xcodeproj"; sourceTree = "<group>"; };
+		858309382536F92B00B225E4 /* MainViewController + Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + Calculations.swift"; sourceTree = "<group>"; };
+		8583094F2537129400B225E4 /* MainViewController + Processing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + Processing.swift"; sourceTree = "<group>"; };
 		85A661602514E5CD009ADE43 /* BodyM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A661712514E5CD009ADE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85A661782514E5E7009ADE43 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -162,7 +168,7 @@
 		85A661802514E5E8009ADE43 /* SegmentationResultMLMultiArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentationResultMLMultiArray.swift; sourceTree = "<group>"; };
 		85A661822514E5E8009ADE43 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85A661842514E5E8009ADE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		85A661852514E5E8009ADE43 /* StillImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StillImageViewController.swift; sourceTree = "<group>"; };
+		85A661852514E5E8009ADE43 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		85A661932514E6D9009ADE43 /* BodyM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BodyM-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,7 +266,10 @@
 				858308692535E50D00B225E4 /* Processing */,
 				85A661822514E5E8009ADE43 /* AppDelegate.swift */,
 				85A6617B2514E5E7009ADE43 /* LaunchScreen.storyboard */,
-				85A661852514E5E8009ADE43 /* StillImageViewController.swift */,
+				85A661852514E5E8009ADE43 /* MainViewController.swift */,
+				857A792C253C8FB200CD794B /* UIView+UIImage.swift */,
+				8583094F2537129400B225E4 /* MainViewController + Processing.swift */,
+				858309382536F92B00B225E4 /* MainViewController + Calculations.swift */,
 				85A661782514E5E7009ADE43 /* Main.storyboard */,
 				85A661712514E5CD009ADE43 /* Info.plist */,
 				85A661932514E6D9009ADE43 /* BodyM-Bridging-Header.h */,
@@ -469,10 +478,13 @@
 				85A6618B2514E5E8009ADE43 /* DeepLabV3FP16.mlmodel in Sources */,
 				854A40242525CC12008AE702 /* model_hourglass.mlmodel in Sources */,
 				854A404A2525D5C9008AE702 /* MovingAverageFilter.swift in Sources */,
+				857A792D253C8FB300CD794B /* UIView+UIImage.swift in Sources */,
 				854A40472525D59D008AE702 /* HeatmapPostProcessor.swift in Sources */,
+				858309392536F92B00B225E4 /* MainViewController + Calculations.swift in Sources */,
 				85A661872514E5E8009ADE43 /* DrawingSegmentationView.swift in Sources */,
 				85A6618C2514E5E8009ADE43 /* DeepLabV3.mlmodel in Sources */,
-				85A661922514E5E8009ADE43 /* StillImageViewController.swift in Sources */,
+				85A661922514E5E8009ADE43 /* MainViewController.swift in Sources */,
+				858309502537129400B225E4 /* MainViewController + Processing.swift in Sources */,
 				854A40252525CC12008AE702 /* model_cpm.mlmodel in Sources */,
 				854A40402525D545008AE702 /* DrawingJointView.swift in Sources */,
 				854A40442525D575008AE702 /* PredictedPoint.swift in Sources */,

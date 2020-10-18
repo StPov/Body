@@ -9,7 +9,6 @@ class DrawingSegmentationView: UIView {
             return color
         } else {
             let color = UIColor(hue: CGFloat(index) / CGFloat(30), saturation: 1, brightness: 1, alpha: 0.5)
-            print(index)
             DrawingSegmentationView.colors[index] = color
             return color
         }
